@@ -27,7 +27,19 @@ function Shipping() {
      
     })
   
-  }).then(resp => resp.json()).then(res => console.log(res))
+  }).then(resp => resp.json())
+  .then(res => {
+    fetch("https://www.carboninterface.com/api/v1/estimates/" + res.data.id, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer ayfX1YYG9KcujbGrozlBw"
+          },
+
+    })
+.then(response => response.json())
+.then(resp => console.log(resp.data.attributes))
+  })
 }
   return (
     <div className="main">
