@@ -29,12 +29,23 @@ function Fuel() {
         fuel_source_value: fuel_source_value,
       }),
     })
-      .then((resp) => resp.json())
-      .then((res) => console.log(res));
+      .then(resp => resp.json())
+      .then(resp =>{
+        fetch("https://www.carboninterface.com/api/v1/estimates/" + resp.data.id, {
+            method: "GET",
+            headers: {
+                Authorization: "Bearer NmCnfoh59UDZ70zUwlJyw",
+                "Content-Type": "application/json"
+              },
+        })
+        .then(response=>response.json())
+        .then(resp=> console.log(resp.data.attributes));
+        })
+    };
     // .catch(error=>{
     //     console.error('Error:', error)
     // })
-  };
+  
 
   return (
     <div>
