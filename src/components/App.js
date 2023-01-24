@@ -1,10 +1,12 @@
-import Shipping from './Shipping';
+// import Shipping from './Shipping';
+import Flight from './Flight';
 import './App.css';
 
 function App() {
   return (
     <div>
-      <Shipping/>
+      {/* <Shipping/> */}
+      <Flight/>
     </div>
   )
   }
