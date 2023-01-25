@@ -1,12 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import Display from "./Display";
 
 function Shipping() {
+   
   let [type, setType] = useState("")
   let [weight_value, setWeightValue] = useState("")
   let [weight_unit, setWeightUnit] = useState("")
   let [distance_value, setDistanceValue] = useState("")
   let [distance_unit, setDistanceUnit] = useState("")
   let [transport_method, setTransportMethod] = useState("")
+  let [gramsList, setGramsList] = useState([])
+  let [kgList, setKgList] = useState([])
+
+
+  let [carbonGrams, setCarbonGrams] = useState(0)
+  let [carbonKgs, setCarbonKgs] = useState(0)
 
   function handleSubmit(e) {
     e.preventDefault()
@@ -28,32 +36,48 @@ function Shipping() {
     })
   
   }).then(resp => resp.json())
-  .then(res => {
-    fetch("https://www.carboninterface.com/api/v1/estimates/" + res.data.id, {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json",
-            "Authorization": "Bearer ayfX1YYG9KcujbGrozlBw"
-          },
+  .then ((data) =>  {
+    setCarbonGrams(data.data.attributes.carbon_g)
+    setCarbonKgs(data.data.attributes.carbon_kg)
+    // flightData.push(res.data.attributes)
+    gramsList.push(data.data.attributes.carbon_g)
+    kgList.push(data.data.attributes.carbon_kg)
 
-    })
-.then(response => response.json())
-.then(resp => console.log(resp.data.attributes))
   })
 }
+const fg = gramsList.map((value, index) => 
+    
+<li key={index}>{value}</li>)
+
+let kilogram = kgList.map((value, index) => 
+
+<li key={index}>{value}</li>)
+
+
   return (
     <div className="main">
+      <h2>Carbon Emission Estimates</h2>
+        <p>Kindly Enter Details Below to Calculate Your Carbon Emmission Estimate</p>
+     
       <form onSubmit={handleSubmit} className="form">
         <div className="data">
-          <input value={type} onChange={(e) => setType(e.target.value)} type="typee" name="estimatetype" placeholder="Type" required />
-          <input value={weight_value} onChange={(e) => setWeightValue(e.target.value)} type="text" name="weight" placeholder="Weight" required />
-          <input value={weight_unit} onChange={(e) => setWeightUnit(e.target.value)} type="text" name="weightunit" placeholder="Weight Unit" required />
-          <input value={distance_value} onChange={(e) => setDistanceValue(e.target.value)} type="number" name="distance" placeholder="Distance" step="0.01" required />
-          <input value={distance_unit} onChange={(e) => setDistanceUnit(e.target.value)} type="text" name="distanceunit" placeholder="Distance Unit" required />
-          <input value={transport_method} onChange={(e) => setTransportMethod(e.target.value)} type="text" name="method" placeholder="Transport Method" step="0.01" required />
+Type: <input value={type} onChange={(e) => setType(e.target.value)} type="types" name="estimatetype" placeholder="Type" required />
+          Weight: <input value={weight_value} onChange={(e) => setWeightValue(e.target.value)} type="text" name="weight" placeholder="Weight" required />
+         Weight Unit: <input value={weight_unit} onChange={(e) => setWeightUnit(e.target.value)} type="text" name="weightunit" placeholder="Weight Unit" required />
+Distance: <input value={distance_value} onChange={(e) => setDistanceValue(e.target.value)} type="number" name="distance" placeholder="Distance" step="0.01" required />
+          Distance Unit: <input value={distance_unit} onChange={(e) => setDistanceUnit(e.target.value)} type="text" name="distanceunit" placeholder="Distance Unit" required />
+          Transport Method:<input value={transport_method} onChange={(e) => setTransportMethod(e.target.value)} type="text" name="method" placeholder="Transport Method" step="0.01" required />
         </div>
         <button className="submit-button" type="submit">Get Estimate</button>
       </form>
+      {/* {fg}
+      {kilogram} */}
+
+      {/* <ol>
+        {fg}
+        {kilogram}
+      </ol> */}
+       <Display carbonGrams={carbonGrams} carbonKgs={carbonKgs}/>
     </div>
   );
 }

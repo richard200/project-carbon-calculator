@@ -1,16 +1,22 @@
-import React, { useState } from "react";
+import React, {  useState } from "react";
+import Display from "./Display";
 
 function Flight() {
   let [type, setType] = useState("")
-  let [passengers, setPassengers] = useState("")
+  let [passengers, setPassengers] = useState([])
 //   let [legs, setLegs] = useState("")
-  let [destination_airport, setDestination] = useState("")
-  let [departure_airport, setDeparture] = useState("")
-//   let [destination_airport1, setDestination1] = useState("")
-//   let [departure_airport1, setDeparture1] = useState("")
+  let [destination_airport, setDestination] = useState([])
+  let [departure_airport, setDeparture] = useState([])
+  // let [flightData, setFlightData] = useState([])
+  let [gramsList, setGramsList] = useState([])
+  let [kgList, setKgList] = useState([])
 
 
+  let [carbonGrams, setCarbonGrams] = useState(0)
+  let [carbonKgs, setCarbonKgs] = useState(0)
 
+
+// useEffect(() => {
   function handleSubmit(e) {
     e.preventDefault()
    
@@ -31,68 +37,99 @@ function Flight() {
     })
   
   }).then(resp => resp.json())
-  .then(res => console.log(res))
-//     fetch("https://www.carboninterface.com/api/v1/estimates/" + res.data.id, {
-//         method: "GET",
-//         headers: {
-//             "Content-Type": "application/json",
-//             "Authorization": "Bearer ayfX1YYG9KcujbGrozlBw"
-//           },
+  .then ((data) =>  {
+    setCarbonGrams(data.data.attributes.carbon_g)
+    setCarbonKgs(data.data.attributes.carbon_kg)
+    // flightData.push(res.data.attributes)
+    gramsList.push(data.data.attributes.carbon_g)
+    kgList.push(data.data.attributes.carbon_kg)
 
-//     })
-// .then(response => response.json())
-// .then(resp => console.log(resp.data.attributes))
-//   })
-}
+  })
+
+
+  }
+
+
+    const fg = gramsList.map((value, index) => 
+    
+    <li key={index}>{value}</li>)
+
+    let kilogram = kgList.map((value, index) => 
+    
+    <li key={index}>{value}</li>)
+
   return (
+  
+  
     <div className="main">
+      <h2>Carbon Emission Estimates</h2>
+        <p>Kindly Enter Details Below to Calculate Your Carbon Emmission Estimate</p>
       <form onSubmit={handleSubmit} className="form">
         <div className="data">
-          <input value={type} 
+         Type: 
+        <input value={type} 
           onChange={(e) => setType(e.target.value)} 
-          type="typee" 
+          type="types" 
           name="estimatetype" 
           placeholder="Type" 
           required />
+        
 
-          <input value={passengers}
+         Passengers: <input value={passengers}
            onChange={(e) => setPassengers(e.target.value)} 
            type="number"
             name="weight" 
             placeholder="Passengers" 
             required />
 
-          <input value={departure_airport} 
+         Departure Airport: <input value={departure_airport} 
           onChange={(e) => setDeparture(e.target.value)} 
           type="text" 
           name="departureairport" 
           placeholder="Departure"
            required />
 
-          <input value={destination_airport} 
+         Destination Airport: <input value={destination_airport} 
           onChange={(e) => setDestination(e.target.value)} 
           type="text"
            name="destinationairport" 
            placeholder="Destination"
             step="0.01" required /> 
-
-          {/* <input value={departure_airport1}
-           onChange={(e) => setDeparture1(e.target.value)} 
-           type="text"
-            name="departureairport" 
-            placeholder="Departure" required />
-
-          <input value={destination_airport1} 
-          onChange={(e) => setDestination1(e.target.value)}
-           type="text"
-            name="destinationairport"
-             placeholder="Destination" step="0.01" required />  */}
          
         </div>
         <button className="submit-button" type="submit">Get Estimate</button>
       </form>
+     
+      {/* <table className="table">
+      <tbody>
+        <tr>
+          <th>
+            <h3 className="grams">Grams</h3>
+          </th>
+          <th>
+            <h3 className="desckgsription">Kilogram</h3>
+          </th>
+          </tr>
+          
+          </tbody>
+
+      </table> */}
+
+      {/* {fg}
+          {kilogram} */}
+    {/* <ol>
+      {fg}
+      {kilogram}
+    </ol> */}
+ <Display carbonGrams={carbonGrams} carbonKgs={carbonKgs}/>
+          
     </div>
+    
   );
+
+
 }
 
-export default Flight;
+export default Flight
+
+// export {Flights, FlightList}
