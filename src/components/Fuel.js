@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 function Fuel() {
 
+  const [estimate, setEstimate] = useState([])
 
   const [fuel_source_type, setFuelSourceType] = useState("");
   const [fuel_source_unit, setFuelSourceUnit] = useState("");
@@ -15,7 +16,7 @@ function Fuel() {
   const submission = (e) => {
     e.preventDefault();
 
-    fetch(apiUrl, {
+   fetch(apiUrl, {
       method: "POST",
       headers: {
         Authorization: "Bearer NmCnfoh59UDZ70zUwlJyw",
@@ -34,17 +35,30 @@ function Fuel() {
         fetch("https://www.carboninterface.com/api/v1/estimates/" + resp.data.id, {
             method: "GET",
             headers: {
-                Authorization: "Bearer NmCnfoh59UDZ70zUwlJyw",
+                "Authorization": "Bearer NmCnfoh59UDZ70zUwlJyw",
                 "Content-Type": "application/json"
               },
         })
         .then(response=>response.json())
-        .then(resp=> console.log(resp.data.attributes));
+        .then((resp)=> {
+
+          estimate.push(resp.data.attributes)
+          console.log(estimate);
+        
+          // setEstimate(estimate)
+          })
+
+          
         })
+      
+   
+      
+
     };
     // .catch(error=>{
     //     console.error('Error:', error)
     // })
+
   
 
   return (
@@ -84,8 +98,27 @@ function Fuel() {
           Estimate
         </button>
       </form>
+
+     <p>{setEstimate.attributes}</p>
+      {/* <table>
+
+        <thead>
+          <tr>
+          <th>carbon_g</th>
+          <th>carbon_lb</th>
+          <th>carbon_kg</th>
+          <th>carbon_mt</th>
+          </tr>
+        </thead>
+        <tbody>
+        {
+          estimate
+        }
+        </tbody>
+      </table> */}
     </div>
   );
 }
 
 export default Fuel;
+ 
