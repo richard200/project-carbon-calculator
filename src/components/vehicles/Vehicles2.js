@@ -9,7 +9,6 @@ export default function VehiclesEstimate() {
 
     const apiKey = 'u8TPQKqcBzfO0x55sphWiw';
     const vehicleMakeApiUrl = "https://www.carboninterface.com/api/v1/vehicle_makes";
-    const vehicleModelApiUrl = `https://www.carboninterface.com/api/v1/vehicle_make/${vehicleMakeId}/vehicle_models`
     useEffect(() => {
         fetch(vehicleMakeApiUrl,{
             method: 'GET',
@@ -22,11 +21,14 @@ export default function VehiclesEstimate() {
         .then(data =>{
             setVehicleMake(data)
             // console.log(data[1])
-            console.log(data[0].data.attributes.name)
+            console.log(data[0].data.id)
         })
     },[])
-
+    
     useEffect(() => {
+        if(vehicleMakeId){
+        const vehicleModelApiUrl = `https://www.carboninterface.com/api/v1/vehicle_makes/${vehicleMakeId}/vehicle_models`
+
         fetch(vehicleModelApiUrl,{
             method: 'GET',
             headers:{
@@ -36,8 +38,13 @@ export default function VehiclesEstimate() {
         })
         .then(res => res.json())
         .then(data =>{
-            console.log(data)
-        })
+            if (data instanceof Object) {
+                setVehicleModel(data);
+                console.log(data)
+            } else {
+                console.log("Invalid json data received");
+            }
+        })}
     },[vehicleMakeId])
 
 
@@ -52,7 +59,7 @@ export default function VehiclesEstimate() {
             <br/>
             {/* <input type="text" className="form-control" placeholder="car make"/> */}
             <br/>
-            <select name="car-make" id="car-make" className="form-control" onChange={(e)=> setVehicleMakeId(e.target.value) }>
+            <select name="car-make" id="car-make" className="form-control" onChange={(e)=> setVehicleMakeId(e.target.value)}>
                 <option value=""></option>
                 {vehicleMakes.map((make) => 
                     <option key={make.data.id} value={make.data.id}>{make.data.attributes.name}</option>)}
@@ -68,7 +75,8 @@ export default function VehiclesEstimate() {
             {/* <input type="text" className="form-control"placeholder="search for a car make" /><br/> */}
             <select name="car-model" id="car-model" className="form-control custom-select ">
                 <option value=""></option>
-                <option value="">dd</option>
+                {vehiclemodel.map((model)=>
+                <option key={model.data.id} value={model.data.id}>{model.data.attributes.name}</option>)}
             </select>
             </div><br/>
 

@@ -11,3 +11,6 @@
     display: flex;
     justify-content: center;
 }    
+body {
+    background-color: #EFE6B3;
+}

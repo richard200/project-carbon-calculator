@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 
 const data = [
   {
@@ -18,6 +18,25 @@ const data = [
 ];
 
 export default function InfoData() {
+  const apiKey = 'u8TPQKqcBzfO0x55sphWiw';
+    const vehicleMakeApiUrl = "https://www.carboninterface.com/api/v1/estimates";
+    useEffect(() => {
+        fetch(vehicleMakeApiUrl,{
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+                'Authorization': 'Bearer ' + apiKey
+            }
+        })
+        .then(res => res.json())
+        .then(data =>{
+            
+            // console.log(data[1])
+            console.log(data[0].data.id)
+        })
+    },[])
+
+
   return (
     <div className="container">
       <table className="table">
