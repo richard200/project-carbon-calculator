@@ -1,109 +1,63 @@
-/*  import { useState, useEffect } from "react"; 
- import React from "react";
+import React, { useState, useEffect } from 'react';
+import Navigation from './Navigation';
 
 function Electricity() {
-  const API_KEY = "VhbhVz6EnGMdEngZexCMfA";
-  const API_URL = "https://www.carboninterface.com/api/v1/estimates";
+    const [data, setData] = useState(null);
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(false);
 
-  const headers = new Headers({
-    Authorization: `Bearer ${API_KEY}`,
-    'Content-Type': 'application/json',
-  });
+    useEffect(() => {
+        const API_URL = 'https://www.carboninterface.com/api/v1/estimates';
+        const API_KEY = 'Q6iFLA4c4lwxp0gbwlKg';
 
-  const data = {
-    type: "electricity",
-    electricity_unit: "mwh",
-    electricity_value: 42,
-    country: "us",
-    state: "fl",
-  };
+        const headers = {
+            'Authorization': `Bearer ${API_KEY}`,
+            'Content-Type': 'application/json'
+        };
 
-  const [carbonData, setCarbonData] = useState();
-  const [userInput, setUserInput] = useState();
-  const [result, setResult] = useState();
+        const data = {
+            "type": "electricity",
+            "electricity_unit": "mwh",
+            "electricity_value": 42,
+            "country": "us",
+            "state": "fl"
+        };
 
-  useEffect(() => {
-    const request = new Request(API_URL, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(data),
-    });
-    fetch(request)
-      .then((response) => response.json())
-      .then((data) => {
-        setCarbonData(data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
+        setLoading(true);
+        fetch(API_URL, {
+            method: 'POST',
+            headers: headers,
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(data => {
+            setData(data);
+            setLoading(false);
+        })
+        .catch(error => {
+            setError(error);
+            setLoading(false);
+        });
+    }, []);
 
-  useEffect(() => {
-    if (carbonData) {
-        setResult(carbonData.carbon_kg * userInput);
+    if (loading) {
+        return <div>Loading...</div>;
     }
-  }, [carbonData, userInput]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
+    if (error) {
+        return <div>Error: {error.message}</div>;
+    }
 
-  return (
-    <div id="electricForm">
-      <form onSubmit={handleSubmit}>
+    if (!data) {
+        return null;
+    }
+
+    return (
         <div>
-          <label id="unitValue" >Enter your unit value:</label>
-          <input className="input"
-            type="number"
-            value={userInput}
-            onChange={(e) => setUserInput(e.target.value)}
-          />
+          <Navigation/>
+           
         </div>
-        <button id="btn" type="submit">Calculate</button>
-      </form>
-      {result && <p>Result: {result}</p>}
-    </div>
-  );
+    );
 }
 
-export default Electricity;  
-
-
-
-/* function Electricity() {
-  const API_KEY = "Q6iFLA4c4lwxp0gbwlKg";
-  const API_URL = "https://www.carboninterface.com/api/v1/estimates";
-
-  const headers = new Headers({
-    'Authorization': `Bearer ${API_KEY}`,
-    'Content-Type': 'application/json'
-  });
-
-  const data = {
-    "type": "electricity",
-    "electricity_unit": "mwh",
-    "electricity_value": 42,
-    "country": "us",
-    "state": "fl"
-  };
-
-  const request = new Request(API_URL, {
-    method: 'POST',
-    headers: headers,
-    body: JSON.stringify(data)
-  });
-
-  fetch(request)
-    .then(function(response) {
-      return response.json();
-    })
-    .then(function(data) {
-      console.log(data);
-      })
-      
-      .catch(function(error) {
-      console.error(error);
-    })
-}
-
-export default Electricity; */ 
+export default Electricity;

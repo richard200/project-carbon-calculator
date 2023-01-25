@@ -1,4 +1,7 @@
- body{
+ @import url('https://fonts.googleapis.com/css2?family=Domine&display=swap');
+
+
+body{
   background-color: #EFE6B3;
 }
 
@@ -68,6 +71,7 @@
   font-size: 80px;
   margin-left: 50px;
   margin-top: -160px;
+  
 }
 
 #secondDiv {
@@ -101,12 +105,15 @@
   
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFFFFF", endColorstr="#DEFFD8", GradientType=1 );
 
-padding-bottom: 350px;
+padding-bottom: 150px;
+
+text-align: center;
 }
 
 #howItWorks{
   text-align: center;
-  margin-top: -5px;
+   
+ 
 
 }
 
@@ -119,3 +126,4 @@ padding-bottom: 350px;
   margin-top: 40px;
   vertical-align: middle;
 }
+

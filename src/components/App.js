@@ -1,17 +1,20 @@
 import React from "react";
 import Home from "./Home";
-//import Electricity from "./Electricity";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Electricity from "./Electricity";
 
 
 
-
-function App(){
-  return(
-    <div>
-    {/* <Electricity/>  */}
-     <Home/>  
+function App() {
+  return (
+    <BrowserRouter>
    
-    </div>
+        <Routes>
+          
+        <Route path="/" element={<Home />} />
+        <Route path="/electricity" element={<Electricity />} />
+        </Routes>
+    </BrowserRouter>
   )
 }
 
