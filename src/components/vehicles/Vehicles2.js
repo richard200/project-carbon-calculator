@@ -1,58 +1,78 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
+import "./style.css"
 
 export default function VehiclesEstimate() {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [options, setOptions] = useState([
-    { value: "stine", label: "Stine" },
-    { value: "steve", label: "Steve" },
-    { value: "jim", label: "Jim" },
-    { value: "john", label: "John" },
-    { value: "jane", label: "Jane" },
-  ]);
+    const [vehicleMakes,setVehicleMake] = useState([])
 
-  const handleSearch = (e) => {
-    setSearchTerm(e.target.value);
-  };
 
-  const filteredOptions = options.filter((option) =>
-    option.label.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+    const apiKey = 'u8TPQKqcBzfO0x55sphWiw';
+    const apiUrl = "https://www.carboninterface.com/api/v1/vehicle_makes";
+
+    useEffect(() => {
+        fetch(apiUrl,{
+            method: 'GET',
+            headers: {
+                'Authorization': 'Bearer ' + apiKey
+            }
+        })
+        .then(res => res.json())
+        .then(data =>{
+            setVehicleMake(data)
+            console.log(data[0].data.attributes.name)
+        })
+    },[])
+
+
+
+
 
   return (
-    <div>
-      <form>
-        <label htmlFor="car-make">Choose a car Make:</label>
-        <input
-          type="text"
-          placeholder="Search for a make"
-          value={searchTerm}
-          onChange={handleSearch}
-        />
-        <br />
-        <select name="make" id="make">
-          {filteredOptions.map((option) => (
-            <option key={option.value} value={option.value}>
-              {option.label}
-            </option>
-          ))}
-        </select>
-        <br />
-        <label htmlFor="car-model">Choose a car Model:</label>
-        <input
-          type="text"
-          placeholder="Search for a model"
-          value={searchTerm}
-          onChange={handleSearch}
-        />
-        <br />
-        <select name="model" id="model">
-          {filteredOptions.map((option) => (
-            <option key={option.value} value={option.value}>
-              {option.label}
-            </option>
-          ))}
-        </select>
-      </form>
+    <div className="container">
+        <form >
+            <div className="form-group">
+            <label htmlFor="Car-make">Search for a Vehicle_make : </label>
+            <br/>
+            {/* <input 
+            type="text" 
+            className="form-control"
+            placeholder="search for a car make"
+            /> */}
+            <br/>
+            <select name="car-make" id="car-make" className="form-control">
+                <option value=""></option>
+                {vehicleMakes.map((make, index) => 
+                    <option key={index} value={make.data.attributes.name}>{make.data.attributes.name}</option>)}
+            </select>
+            </div>
+           
+            <br/>
+            
+            <div className="form-group">
+
+            <label htmlFor="Car-make">Search for a Vehicle_model : </label>
+            <br/>
+            <input 
+            type="text" 
+            className="form-control"
+            placeholder="search for a car make"
+            /><br/>
+            <select name="car-make" id="car-make" className="form-control custom-select ">
+                <option value=""></option>
+                <option value="">dd</option>
+            </select>
+            </div><br/>
+
+            <input 
+            type="text" 
+            className="form-control"
+            placeholder="Enter distance value"
+            />
+            <br/>
+            <div className="button-container">
+              <button className="submit-btn">Submit Data</button>
+            </div>
+        </form>
+    
     </div>
   );
 }
