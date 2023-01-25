@@ -89,3 +89,33 @@
   margin-left: 850px;
   margin-top: -250px;
 }
+
+#thirdDiv{
+  background: hsla(0, 0%, 100%, 1);
+
+  background: linear-gradient(0deg, hsla(0, 0%, 100%, 1) 0%, hsla(111, 100%, 92%, 1) 100%);
+  
+  background: -moz-linear-gradient(0deg, hsla(0, 0%, 100%, 1) 0%, hsla(111, 100%, 92%, 1) 100%);
+  
+  background: -webkit-linear-gradient(0deg, hsla(0, 0%, 100%, 1) 0%, hsla(111, 100%, 92%, 1) 100%);
+  
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFFFFF", endColorstr="#DEFFD8", GradientType=1 );
+
+padding-bottom: 350px;
+}
+
+#howItWorks{
+  text-align: center;
+  margin-top: -5px;
+
+}
+
+#howItWorks2{
+  text-align: center;
+}
+
+#list1{
+  text-align: center;
+  margin-top: 40px;
+  vertical-align: middle;
+}
