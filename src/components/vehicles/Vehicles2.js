@@ -38,7 +38,7 @@ export default function VehiclesEstimate() {
         .then(data =>{
             console.log(data)
         })
-    },[])
+    },[vehicleMakeId])
 
 
 
@@ -52,10 +52,10 @@ export default function VehiclesEstimate() {
             <br/>
             {/* <input type="text" className="form-control" placeholder="car make"/> */}
             <br/>
-            <select name="car-make" id="car-make" className="form-control">
+            <select name="car-make" id="car-make" className="form-control" onChange={(e)=> setVehicleMakeId(e.target.value) }>
                 <option value=""></option>
                 {vehicleMakes.map((make) => 
-                    <option key={make.data.id} value={make.data.attributes.name}>{make.data.attributes.name}</option>)}
+                    <option key={make.data.id} value={make.data.id}>{make.data.attributes.name}</option>)}
             </select>
             </div>
            
@@ -66,7 +66,7 @@ export default function VehiclesEstimate() {
             <label htmlFor="Car-make">Search for a Vehicle_model : </label>
             <br/>
             {/* <input type="text" className="form-control"placeholder="search for a car make" /><br/> */}
-            <select name="car-make" id="car-make" className="form-control custom-select ">
+            <select name="car-model" id="car-model" className="form-control custom-select ">
                 <option value=""></option>
                 <option value="">dd</option>
             </select>
