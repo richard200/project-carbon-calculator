@@ -3,22 +3,40 @@ import "./style.css"
 
 export default function VehiclesEstimate() {
     const [vehicleMakes,setVehicleMake] = useState([])
+    const [vehiclemodel,setVehicleModel] = useState([])
+    const [vehicleMakeId, setVehicleMakeId] = useState(null);
 
 
     const apiKey = 'u8TPQKqcBzfO0x55sphWiw';
-    const apiUrl = "https://www.carboninterface.com/api/v1/vehicle_makes";
-
+    const vehicleMakeApiUrl = "https://www.carboninterface.com/api/v1/vehicle_makes";
+    const vehicleModelApiUrl = `https://www.carboninterface.com/api/v1/vehicle_make/${vehicleMakeId}/vehicle_models`
     useEffect(() => {
-        fetch(apiUrl,{
+        fetch(vehicleMakeApiUrl,{
             method: 'GET',
             headers: {
+                'content-type': 'application/json',
                 'Authorization': 'Bearer ' + apiKey
             }
         })
         .then(res => res.json())
         .then(data =>{
             setVehicleMake(data)
+            // console.log(data[1])
             console.log(data[0].data.attributes.name)
+        })
+    },[])
+
+    useEffect(() => {
+        fetch(vehicleModelApiUrl,{
+            method: 'GET',
+            headers:{
+                'content-type': 'application/json',
+                'Authorization': 'Bearer ' + apiKey
+            }
+        })
+        .then(res => res.json())
+        .then(data =>{
+            console.log(data)
         })
     },[])
 
@@ -32,16 +50,12 @@ export default function VehiclesEstimate() {
             <div className="form-group">
             <label htmlFor="Car-make">Search for a Vehicle_make : </label>
             <br/>
-            {/* <input 
-            type="text" 
-            className="form-control"
-            placeholder="search for a car make"
-            /> */}
+            {/* <input type="text" className="form-control" placeholder="car make"/> */}
             <br/>
             <select name="car-make" id="car-make" className="form-control">
                 <option value=""></option>
-                {vehicleMakes.map((make, index) => 
-                    <option key={index} value={make.data.attributes.name}>{make.data.attributes.name}</option>)}
+                {vehicleMakes.map((make) => 
+                    <option key={make.data.id} value={make.data.attributes.name}>{make.data.attributes.name}</option>)}
             </select>
             </div>
            
@@ -51,11 +65,7 @@ export default function VehiclesEstimate() {
 
             <label htmlFor="Car-make">Search for a Vehicle_model : </label>
             <br/>
-            <input 
-            type="text" 
-            className="form-control"
-            placeholder="search for a car make"
-            /><br/>
+            {/* <input type="text" className="form-control"placeholder="search for a car make" /><br/> */}
             <select name="car-make" id="car-make" className="form-control custom-select ">
                 <option value=""></option>
                 <option value="">dd</option>
