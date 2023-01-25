@@ -1,7 +1,7 @@
 import '../App.css';
 import VehiclesEstimate from './vehicles/Vehicles2';
 // import Vehiclesfetch from './vehicles/Vehicle';
-import InfoData from './vehicles/InfoData';
+
 
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
 
       <VehiclesEstimate/>
       {/* <Vehiclesfetch/> */}
-      <InfoData/>
+      
     </div>
   );
 }

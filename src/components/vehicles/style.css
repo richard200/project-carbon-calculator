@@ -6,6 +6,12 @@
     border-radius: 5px;
     font-size: 16px;
     }
+.submit-btn:hover {
+        background-color: blue;
+        color: white;
+        cursor: pointer;
+        transform: scale(1.1);
+      }
 .button-container{
     align-items: center;
     display: flex;
