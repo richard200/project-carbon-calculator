@@ -62,7 +62,7 @@ function Fuel() {
   return (
     <div>
       <Navigation/>
-      <article className="mt-15 p-3">
+      <article id="displayArticle" className="mt-15 p-3">
         <h1 className=" text-2xl mb-3">
           {" "}
           <strong> Fuel Combustion Carbon Calculator</strong>
@@ -216,7 +216,7 @@ function Fuel() {
             name="type"
           />
         </div>
-        <button
+        <button 
           className="submit-button rounded-md shadow-lg shadow-indigo-500/50 bg-green-600 hover:bg-amber-300 active:bg-green-700 focus:outline-none focus:ring focus:ring-amber-300 ... mt-10 mb-10 p-3"
           type="submit"
         >

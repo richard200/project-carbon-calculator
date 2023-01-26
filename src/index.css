@@ -9,6 +9,9 @@ body{
    color: #EFE6B3; 
   height: 80px;
 }
+#navBar{
+  margin-left: 520px;
+}
 
 .label {
   font-weight: bold;
@@ -26,9 +29,14 @@ body{
   border: none;
   border-radius: 5px;
   margin-top: 10px;
-
-
  
+}
+#electricValue{
+  text-align: center;
+  margin-top: 50px;
+  font-size: 40px;
+  font-weight: bold;
+  /* text-decoration: underline; */
 }
 
 #electricForm{
@@ -51,14 +59,14 @@ body{
 #logo{
   display: flex;
   align-items: flex-start;
-  margin-top: -270px;
-  
+  margin-top: -260px;
+   
 
 }
 
 #img2{
-  margin-left: 830px;
-  margin-top: -300px;
+  margin-left: 1000px;
+  margin-top: -280px;
 }
 
 #intro{
@@ -86,11 +94,12 @@ body{
 
 #secondDiv h1, p{
   margin-left: 50px;
+  margin-top: 25px;
   
 }
 
 #img3{
-  margin-left: 850px;
+  margin-left: 1000px;
   margin-top: -250px;
 }
 
@@ -110,20 +119,21 @@ padding-bottom: 150px;
 text-align: center;
 }
 
-#howItWorks{
+#howItWorks h1{
   text-align: center;
-   
+  margin-top: 0px; 
  
 
 }
 
 #howItWorks2{
   text-align: center;
+  margin-top: 40px;
 }
 
 #list1{
   text-align: center;
-  margin-top: 40px;
+  margin-top: 50px;
   vertical-align: middle;
 }
 
@@ -142,6 +152,8 @@ text-align: center;
   border: none;
   padding-bottom: 10px;
   outline: none;
+  width: 100%;
+  margin-left: -10px;
 
   /* color: #efe6b3 */
 }
@@ -150,18 +162,35 @@ text-align: center;
   border: none;
   margin-left: -10px;
   padding-bottom: 10px;
+  width: 100%;
   
 
 }
 
 #ApiInput3{
   border: none;
-  margin-left: 50px;
+  margin-left: -10px;
   padding-bottom: 10px;
+  width: 100%;
 }
 
 #ApiInput4{
   border: none;
-  margin-left: 70px;
+  margin-left: -10px;
   border-color: none;
+  width: 100%;
+}
+#Apibtn{
+  background-color: #92CF34;
+  padding-left: 10px ;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 20%;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+#displayArticle{
+  
 }

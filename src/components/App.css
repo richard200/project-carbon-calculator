@@ -96,8 +96,25 @@ input[type=submit]:hover {
 
 .main {
   border-radius: 5px;
-  background-color: #f2f2f2;
+  background-color: #EFE6B3;
   padding: 20px;
+}
+.header{
+  text-align: center;
+  font-size: 40px;
+}
+.header2{
+  margin-bottom: 20px;
+}
+.submit-button{
+  background-color: #92CF34;
+  padding-left: 10px ;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 10%;
+  border-radius: 5px;
+  margin-top: 20px;
 }
 
 body{

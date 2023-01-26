@@ -64,8 +64,8 @@ function Flight() {
   
     <div className="main">
       <Navigation/>
-      <h2>Carbon Emission Estimates</h2>
-        <p>Kindly Enter Details Below to Calculate Your Carbon Emmission Estimate</p>
+      <h2 className="header">Carbon Emission Estimates</h2>
+        <h2 className="header2">Kindly Enter Details Below to Calculate Your Carbon Emmission Estimate</h2>
       <form onSubmit={handleSubmit} className="form">
         <div className="data">
   
