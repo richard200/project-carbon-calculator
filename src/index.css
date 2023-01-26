@@ -128,37 +128,48 @@ text-align: center;
 }
 
 #Apiform{
-  margin: 0 auto;
-  width: 50%;
-  display: flex;
-  align-items: center;
-  margin-left: 70px;
-  margin-top: 150px;
-  border: none;
+ 
+ margin: 0 auto;
+ text-align: center;
+ width: 50%;
+
  
 }
 
 #ApiInput1{
   border: none;
   
+ 
+ /*  margin-left: 190px;
+  margin-top: 10px; */
 
 }
 
 #ApiInput2{
   border: none;
+  margin-left: -10px;
+
 }
 
 #ApiInput3{
   border: none;
+  margin-left: 50px;
 }
 
 #ApiInput4{
   border: none;
+  margin-left: 70px;
+  border-color: none;
 }
 
 #Apibtn{
   border: none;
-
+  margin-left: 80px;
+  margin-top: 40px;
+  background-color: rgb(123, 194, 123);
+  /* margin-top: 120px; */
+  
+  
 }
 
 #data{

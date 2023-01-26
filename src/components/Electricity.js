@@ -60,40 +60,40 @@ function Electricity() {
             <div>
               <Navigation/>
               <form id="Apiform" onSubmit={handleSubmit}>
-                <label>
+                <label id="ApiInput1" >
                   Electricity Unit:
                   <input 
-                    id="ApiInput1" 
+                    
                     type="text" 
                     value={electricityUnit} 
                     onChange={(e) => setElectricityUnit(e.target.value)} 
                   />
                 </label>
                 <br />
-                <label>
+                <label id="ApiInput2">
                   Electricity Value:
                   <input 
-                    id="ApiInput2" 
+                     
                     type="number" 
                     value={electricityValue} 
                     onChange={(e) => setElectricityValue(e.target.value)} 
                   />
                 </label>
                 <br />
-                <label>
+                <label id="ApiInput3">
                   Country:
                   <input 
-                    id="ApiInput3" 
+                     
                     type="text" 
                     value={country} 
                     onChange={(e) => setCountry(e.target.value)} 
                   />
                 </label>
                 <br />
-                <label>
+                <label id="ApiInput4">
                   State:
                   <input 
-                    id="ApiInput4" 
+                     
                     type="text"                     value={state} 
                     onChange={(e) => setState(e.target.value)} 
                   />
@@ -116,6 +116,8 @@ function Electricity() {
               <div key={index}>
                   <p>{key}: {renderData(data[key])}</p>
               </div>
+
+              
           ));
       }
   
