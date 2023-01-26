@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import FuelDisplayEstimate from "../FuelDisplayEstimate";
 
 function Fuel() {
 
-  const [estimate, setEstimate] = useState([])
+  const [estimateInGrams, setEstimateInGrams] = useState(0)
+  const [estimateInKilograms, setEstimateInKilograms] = useState(0)
+  const [estimateInPounds, setEstimateInPounds] = useState(0)
 
   const [fuel_source_type, setFuelSourceType] = useState("");
   const [fuel_source_unit, setFuelSourceUnit] = useState("");
@@ -40,12 +43,14 @@ function Fuel() {
               },
         })
         .then(response=>response.json())
-        .then((resp)=> {
+        .then((data)=> {
 
-          estimate.push(resp.data.attributes)
-          console.log(estimate);
+          setEstimateInGrams(data.data.attributes.carbon_g)
+          setEstimateInKilograms(data.data.attributes.carbon_kg)
+          setEstimateInPounds(data.data.attributes.carbon_lb)
+          
         
-          // setEstimate(estimate)
+       
           })
 
           
@@ -99,7 +104,7 @@ function Fuel() {
         </button>
       </form>
 
-     <p>{setEstimate.attributes}</p>
+   
       {/* <table>
 
         <thead>
@@ -116,6 +121,8 @@ function Fuel() {
         }
         </tbody>
       </table> */}
+
+      <FuelDisplayEstimate estimateInGrams={estimateInGrams} estimateInKilograms={estimateInKilograms} estimateInPounds={estimateInPounds}/>
     </div>
   );
 }
