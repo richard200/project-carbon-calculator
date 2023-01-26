@@ -1,13 +1,167 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+ @import url('https://fonts.googleapis.com/css2?family=Domine&display=swap');
+
+
+body{
+  background-color: #EFE6B3;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+ nav{
+   color: #EFE6B3; 
+  height: 80px;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.input {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+#btn {
+  background-color: rgb(61, 105, 61);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+
+
+ 
+}
+
+#electricForm{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 200px;
+}
+
+#unitValue{
+  padding-right: 5px;
+}
+
+#home{
+  margin-left: 900px;
+}
+
+#logo{
+  display: flex;
+  align-items: flex-start;
+  margin-top: -270px;
+  
+
+}
+
+#img2{
+  margin-left: 830px;
+  margin-top: -300px;
+}
+
+#intro{
+  margin-left: 50px;
+  font-size: 20px;
+ 
+}
+
+#save{
+  font-size: 80px;
+  margin-left: 50px;
+  margin-top: -160px;
+  
+}
+
+#secondDiv {
+
+  background-color: white;
+  padding-bottom: 35px;
+  padding-top: 25px;
+  margin-top: -50px;
+
+
+}  
+
+#secondDiv h1, p{
+  margin-left: 50px;
+  
+}
+
+#img3{
+  margin-left: 850px;
+  margin-top: -250px;
+}
+
+#thirdDiv{
+  background: hsla(0, 0%, 100%, 1);
+
+  background: linear-gradient(0deg, hsla(0, 0%, 100%, 1) 0%, hsla(111, 100%, 92%, 1) 100%);
+  
+  background: -moz-linear-gradient(0deg, hsla(0, 0%, 100%, 1) 0%, hsla(111, 100%, 92%, 1) 100%);
+  
+  background: -webkit-linear-gradient(0deg, hsla(0, 0%, 100%, 1) 0%, hsla(111, 100%, 92%, 1) 100%);
+  
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFFFFF", endColorstr="#DEFFD8", GradientType=1 );
+
+padding-bottom: 150px;
+
+text-align: center;
+}
+
+#howItWorks{
+  text-align: center;
+   
+ 
+
+}
+
+#howItWorks2{
+  text-align: center;
+}
+
+#list1{
+  text-align: center;
+  margin-top: 40px;
+  vertical-align: middle;
+}
+
+#Apiform{
+ 
+ margin: 0 auto;
+ text-align: center;
+ width: 50%;
+ margin-top: 100px;
+ outline: none;
+
+ 
+}
+
+#ApiInput1{
+  border: none;
+  padding-bottom: 10px;
+  outline: none;
+
+  /* color: #efe6b3 */
+}
+
+#ApiInput2{
+  border: none;
+  margin-left: -10px;
+  padding-bottom: 10px;
+  
+
+}
+
+#ApiInput3{
+  border: none;
+  margin-left: 50px;
+  padding-bottom: 10px;
+}
+
+#ApiInput4{
+  border: none;
+  margin-left: 70px;
+  border-color: none;
 }
