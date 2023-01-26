@@ -66,14 +66,16 @@ function Flight() {
         <p>Kindly Enter Details Below to Calculate Your Carbon Emmission Estimate</p>
       <form onSubmit={handleSubmit} className="form">
         <div className="data">
-         Type: 
+  
+      
+          Type: 
         <input value={type} 
           onChange={(e) => setType(e.target.value)} 
           type="types" 
           name="estimatetype" 
           placeholder="Type" 
           required />
-        
+         
 
          Passengers: <input value={passengers}
            onChange={(e) => setPassengers(e.target.value)} 
@@ -82,46 +84,66 @@ function Flight() {
             placeholder="Passengers" 
             required />
 
-         Departure Airport: <input value={departure_airport} 
+         Departure Airport (input either NBO, KIS or WIL ): <input value={departure_airport} 
           onChange={(e) => setDeparture(e.target.value)} 
           type="text" 
           name="departureairport" 
           placeholder="Departure"
-           required />
+           required
+           
+            />
+           
 
-         Destination Airport: <input value={destination_airport} 
+         Destination Airport (input either NBO, KIS or WIL): <input value={destination_airport} 
           onChange={(e) => setDestination(e.target.value)} 
           type="text"
            name="destinationairport" 
            placeholder="Destination"
             step="0.01" required /> 
+
+
          
         </div>
         <button className="submit-button" type="submit">Get Estimate</button>
       </form>
      
-      {/* <table className="table">
+   
+  
+     <br>
+     </br>
+     <br>
+     </br>
+ <Display carbonGrams={carbonGrams} carbonKgs={carbonKgs}/>
+ <br>
+ </br>
+ <br>
+ </br>
+
+ {/* <td>
+      {fg}
+      {kilogram}
+    </td> */}
+
+       <table className="table">
       <tbody>
+        <h3>Your Carbon Emission Data </h3>
         <tr>
           <th>
-            <h3 className="grams">Grams</h3>
+            <h4 className="grams">Grams</h4>
+            {fg }
           </th>
           <th>
-            <h3 className="desckgsription">Kilogram</h3>
+            <h4 className="kilogram">Kilograms</h4>
+            {kilogram} 
           </th>
           </tr>
           
+         
           </tbody>
 
-      </table> */}
+      </table> 
 
-      {/* {fg}
-          {kilogram} */}
-    {/* <ol>
-      {fg}
-      {kilogram}
-    </ol> */}
- <Display carbonGrams={carbonGrams} carbonKgs={carbonKgs}/>
+     
           
     </div>
     

@@ -1,14 +1,15 @@
- import Shipping from './Shipping';
-// import Flight from './Flight';
+//  import Shipping from './Shipping';
+import Flight from './Flight';
 import './App.css';
 
 
 function App() {
   return (
     <div>
-      <Shipping/>
-      {/* <Flight />
-       */}
+      {/* <Shipping/> */}
+      <Flight 
+      style={{ backgroundColor: "#EFE6B3"}}
+     />
 
     </div>
   )
