@@ -13,7 +13,8 @@ function Electricity() {
     
 
     function handleSubmit(event) {
-        event.preventDefault();
+        
+      event.preventDefault();
         
         
         const API_URL = 'https://www.carboninterface.com/api/v1/estimates';
@@ -59,6 +60,9 @@ function Electricity() {
         return (
             <div>
               <Navigation/>
+              <div>
+                <h1 id="electricValue"> Fill in your Electric Value</h1>
+              </div>
               <form id="Apiform" onSubmit={handleSubmit}>
                 <label id="ApiInput1" >
                   Electricity Unit:
@@ -101,6 +105,9 @@ function Electricity() {
                 <br />
                 <button id="Apibtn" type="submit">Submit</button>
               </form>
+              <div id="fetched-data">
+  {renderData(data)}
+</div>
               {data && <div>{JSON.stringify(data)}</div>}
             </div>
         );
@@ -110,26 +117,65 @@ function Electricity() {
       if (!data) {
           return null;
       }
-  
+    
       if (typeof data === "object") {
           return Object.keys(data).map((key, index) => (
-              <div key={index}>
-                  <p>{key}: {renderData(data[key])}</p>
+              <div id="fetched" key={index}>
+                  <p id="fetched2"> {key}: {renderData(data[key])}</p>
               </div>
-
-              
           ));
       }
-  
       return data;
-  }
-  
-  return (
+    }
+    
+    return (
       <div>
-          <Navigation/>
-          {renderData(data)}
+        <Navigation/>
+        <form id="Apiform" onSubmit={handleSubmit}>
+                <label id="ApiInput1" >
+                  Electricity Unit:
+                  <input 
+                    
+                    type="text" 
+                    value={electricityUnit} 
+                    onChange={(e) => setElectricityUnit(e.target.value)} 
+                  />
+                </label>
+                <br />
+                <label id="ApiInput2">
+                  Electricity Value:
+                  <input 
+                     
+                    type="number" 
+                    value={electricityValue} 
+                    onChange={(e) => setElectricityValue(e.target.value)} 
+                  />
+                </label>
+                <br />
+                <label id="ApiInput3">
+                  Country:
+                  <input 
+                     
+                    type="text" 
+                    value={country} 
+                    onChange={(e) => setCountry(e.target.value)} 
+                  />
+                </label>
+                <br />
+                <label id="ApiInput4">
+                  State:
+                  <input 
+                     
+                    type="text"                     value={state} 
+                    onChange={(e) => setState(e.target.value)} 
+                  />
+                </label>
+                <br />
+                <button id="Apibtn" type="submit">Submit</button>
+              </form>
+        {submitted && renderData(data)}
       </div>
-  );
+    );
 }
 
 export default Electricity;
