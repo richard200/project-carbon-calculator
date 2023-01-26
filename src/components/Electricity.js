@@ -131,6 +131,9 @@ function Electricity() {
     return (
       <div>
         <Navigation/>
+        <div>
+                <h1 id="electricValue"> Fill in your Electric Value</h1>
+              </div>
         <form id="Apiform" onSubmit={handleSubmit}>
                 <label id="ApiInput1" >
                   Electricity Unit:
