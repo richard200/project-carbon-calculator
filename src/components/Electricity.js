@@ -6,10 +6,11 @@ function Electricity() {
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
     const [electricityUnit, setElectricityUnit] = useState("mwh");
-    const [electricityValue, setElectricityValue] = useState();
+    const [electricityValue, setElectricityValue] = useState('');
     const [country, setCountry] = useState("us");
     const [state, setState] = useState("fl");
     const [submitted, setSubmitted] = useState(false);
+    
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -58,26 +59,46 @@ function Electricity() {
               <form id="Apiform" onSubmit={handleSubmit}>
                 <label>
                   Electricity Unit:
-                  <input id="ApiInput1" type="text" value={electricityUnit} onChange={(e) => setElectricityUnit(e.target.value)} />
+                  <input 
+                    id="ApiInput1" 
+                    type="text" 
+                    value={electricityUnit} 
+                    onChange={(e) => setElectricityUnit(e.target.value)} 
+                  />
                 </label>
                 <br />
                 <label>
                   Electricity Value:
-                  <input id="ApiInput2" type="number" value={electricityValue} onChange={(e) => setElectricityValue(e.target.value)} />
+                  <input 
+                    id="ApiInput2" 
+                    type="number" 
+                    value={electricityValue} 
+                    onChange={(e) => setElectricityValue(e.target.value)} 
+                  />
                 </label>
                 <br />
                 <label>
                   Country:
-                  <input id="ApiInput3" type="text" value={country} onChange={(e) => setCountry(e.target.value)} />
+                  <input 
+                    id="ApiInput3" 
+                    type="text" 
+                    value={country} 
+                    onChange={(e) => setCountry(e.target.value)} 
+                  />
                 </label>
                 <br />
                 <label>
                   State:
-                  <input id="ApiInput4" type="text" value={state} onChange={(e) => setState(e.target.value)} />
+                  <input 
+                    id="ApiInput4" 
+                    type="text"                     value={state} 
+                    onChange={(e) => setState(e.target.value)} 
+                  />
                 </label>
                 <br />
                 <button id="Apibtn" type="submit">Submit</button>
               </form>
+              {data && <div>{JSON.stringify(data)}</div>}
             </div>
         );
     }
@@ -85,9 +106,10 @@ function Electricity() {
     return (
       <div>
         <Navigation/>
-        {data && <div>{JSON.stringify(data)}</div>}
+        {data && <div>{JSON.stringify(data).replace(/[{}"]/g, '')}</div>}
       </div>
   );
 }
 
 export default Electricity;
+
