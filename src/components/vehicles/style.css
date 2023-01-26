@@ -43,14 +43,15 @@ body {
     color: white;
     cursor: pointer;
   }
-  .left-img {
+  
+  /* .left-img {
     background-position: left;
     background-size: auto;
     position: absolute;
     width: 100%;
     height: 100%;
     z-index: -4;
-  }
+  } */
 
   .table {
     width: 100%;
