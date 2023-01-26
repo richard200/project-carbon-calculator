@@ -106,7 +106,7 @@ function Electricity() {
     return (
       <div>
         <Navigation/>
-        {data && <div>{JSON.stringify(data).replace(/[{}"]/g, '')}</div>}
+        {data && <div>{JSON.stringify(data).replace(/[{}"]/g, '').split(',').join(', ')}</div>}
       </div>
   );
 }
