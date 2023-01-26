@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Display from "./Display";
+import Navigation from "./Navigation";
 
 function Shipping() {
    
@@ -75,6 +76,7 @@ let kilogram = kgList.map((value, index) =>
 
   return (
     <div className="main">
+      <Navigation/>
       <h2>Carbon Emission Estimates</h2>
         <p>Kindly Enter Details Below to Calculate Your Carbon Emmission Estimate</p>
      
