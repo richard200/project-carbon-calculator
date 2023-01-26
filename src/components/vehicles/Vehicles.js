@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from "react";
 import InfoData from './InfoData';
+import Navigation from "../Navigation"
 import "./style.css"
 
-export default function VehiclesEstimate() {
+export default function Vehicles() {
     const [vehicleMakes,setVehicleMake] = useState([])
     const [vehiclemodel,setVehicleModel] = useState([])
     const [vehicleMakeId, setVehicleMakeId] = useState(null);
@@ -60,6 +61,9 @@ export default function VehiclesEstimate() {
 
 
   return (
+    <div>
+        <Navigation/>
+
     <div className="container">
         <form >
             <div className="form-group">
@@ -98,7 +102,7 @@ export default function VehiclesEstimate() {
             <br/>
             <label htmlFor="Car-make">Select distance unit to use: </label>
             <select name="car-model" id="car-model" className="form-control custom-select " onChange={(e)=> {setDistanceUnit(e.target.value)}}>
-                <option value="null"></option>   
+                <option value="null"></option>
                 <option value="km">km</option>
                 <option value="mi">mi</option>
             </select><br/>
@@ -108,6 +112,7 @@ export default function VehiclesEstimate() {
         <InfoData vehicleMakeId={vehicleMakeId} modelId={modelId} distanceValue={distanceValue}
   distanceUnit={distanceUnit} />
     
+    </div>
     </div>
   );
 }

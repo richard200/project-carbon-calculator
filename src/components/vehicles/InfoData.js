@@ -9,7 +9,7 @@ export default function InfoData({modelId,vehicleMakeId,distanceUnit,distanceVal
     const API = "https://www.carboninterface.com/api/v1/estimates";
     const [isFetching,setIsFetching] = useState(false)
     const [fetchedData,setfetchedData] = useState(null)
-    const [formValid,setFormValid] = useState(false)
+    
 
     useEffect(() => {
       if(!isFetching) return;
@@ -30,8 +30,8 @@ export default function InfoData({modelId,vehicleMakeId,distanceUnit,distanceVal
         .then(res => res.json())
         .then(data => {
           setfetchedData(data)
-        // console.log(fetchedData.data.attributes.vehicle_make);
-        // console.log("unit = ",distanceUnit)
+        console.log(fetchedData.data.attributes.vehicle_make);
+        console.log("unit = ",distanceUnit)
         // console.log(data.data.attributes)
         setIsFetching(false)
         })
@@ -42,31 +42,17 @@ export default function InfoData({modelId,vehicleMakeId,distanceUnit,distanceVal
 
     const handleSubmit = (e) =>{
       e.preventDefault();
-      let errorMessages = '';
-      if(!vehicleMakeId)
-          errorMessages += "Please Select vehicle make\n";
-      if(!modelId)
-          errorMessages += "Please Select vehicle model\n";
-      if(!distanceUnit)
-          errorMessages += "Please Select distance unit\n";
-      if(!distanceValue)
-          errorMessages += "Please Enter distance value\n";
   
-      if(errorMessages === ''){
-          setFormValid(true);
-          console.log(formValid)
-      }else{
-          alert(errorMessages);
-          setFormValid(false);
-      }
       setIsFetching(true)
+  
+      
   }
 
 
   return (
     <div className="container">
-       <div className="button-container">
-              <button className="submit-btn" onClick={handleSubmit}>Submit Data</button>
+       <div className="button-container" id="submit-container">
+              <button className="submit-btn" id="submit" onClick={handleSubmit}>Submit Data</button>
             </div>
       <table className="table">
         <thead>
