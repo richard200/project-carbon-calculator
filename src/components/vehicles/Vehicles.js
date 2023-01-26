@@ -71,7 +71,7 @@ export default function Vehicles() {
  <div className="left-img" style={{ backgroundImage: `url(${GreenEarth})` }}>
    {/* other elements go here */}
 </div>
-        <h1 id="h1-vehicles">Vehicles Carbon Estimator</h1>
+        <h1 id="h1-vehicles">Carbon Emission Estimates</h1>
 
     <div className="container"><br/>
         <form >
@@ -109,7 +109,7 @@ export default function Vehicles() {
             onChange={(e)=>{setDistanceValue(e.target.value) }}
             />
             <br/>
-            <label htmlFor="Car-make">Select distance unit to use: </label>
+            <label htmlFor="Car-make" id="distanceUnit">Select distance unit to use: </label>
             <select name="car-model" id="car-model" className="form-control custom-select " onChange={(e)=> {setDistanceUnit(e.target.value)}}>
                 <option value="null"></option>
                 <option value="km">km</option>

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navigation from './Navigation';
+import carbonCalc from './vehicles/carbon-calc.png';
+import GreenEarth from './vehicles/green.png';
 
 function Electricity() {
     const [data, setData] = useState(null);
@@ -60,8 +62,15 @@ function Electricity() {
         return (
             <div>
               <Navigation/>
+              <div className="image-container">
+            <img  id="logo" src={carbonCalc} alt="carbon calc" />
+        </div>
+          <div className="left-img" style={{ backgroundImage: `url(${GreenEarth})` }}>
+            {/* other elements go here */}
+          </div>
+         
               <div>
-                <h1 id="electricValue"> Fill in your Electric Value</h1>
+                <h1 id="electricValue"> Carbon Emission Estimates</h1>
               </div>
               <form id="Apiform" onSubmit={handleSubmit}>
                 <label id="ApiInput1" >
@@ -131,8 +140,15 @@ function Electricity() {
     return (
       <div>
         <Navigation/>
+        <div className="image-container">
+            <img  id="logo" src={carbonCalc} alt="carbon calc" />
+        </div>
+        <div className="left-img" style={{ backgroundImage: `url(${GreenEarth})` }}>
+          {/* other elements go here */}
+        </div>
+         
         <div>
-                <h1 id="electricValue"> Fill in your Electric Value</h1>
+       <h1 id="electricValue"> Fill in your Electric Value</h1>
               </div>
         <form id="Apiform" onSubmit={handleSubmit}>
                 <label id="ApiInput1" >

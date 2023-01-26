@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import FuelDisplayEstimate from "./FuelDisplayEstimate";
 import Navigation from "./Navigation";
+import carbonCalc from './vehicles/carbon-calc.png';
+import GreenEarth from './vehicles/green.png';
 
 function Fuel() {
   const [estimateInGrams, setEstimateInGrams] = useState(0);
@@ -62,10 +64,15 @@ function Fuel() {
   return (
     <div>
       <Navigation/>
+      <div className="image-container">
+            <img  id="logo" src={carbonCalc} alt="carbon calc" />
+        </div>
+ <div className="left-img" style={{ backgroundImage: `url(${GreenEarth})` }}>
+   {/* other elements go here */}
+</div>
       <article id="displayArticle" className="mt-15 p-3">
-        <h1 className=" text-2xl mb-3">
-          {" "}
-          <strong> Fuel Combustion Carbon Calculator</strong>
+        <h1 className=" text-2xl mb-3" id="headerDisplay">
+          Carbon Emission Estimates
         </h1>
         <p>
           This particular carbon calculator will provide carbon emissions in

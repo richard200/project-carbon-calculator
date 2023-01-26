@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Display from "./Display";
 import Navigation from "./Navigation";
+import carbonCalc from './vehicles/carbon-calc.png';
+import GreenEarth from './vehicles/green.png';
 
 function Shipping() {
    
@@ -77,12 +79,18 @@ let kilogram = kgList.map((value, index) =>
   return (
     <div className="main">
       <Navigation/>
+      <div className="image-container">
+            <img  id="logo" src={carbonCalc} alt="carbon calc" />
+        </div>
+ <div className="left-img" style={{ backgroundImage: `url(${GreenEarth})` }}>
+   {/* other elements go here */}
+</div>
       <h2 className="header">Carbon Emission Estimates</h2>
         <h2 className="header2">Kindly Enter Details Below to Calculate Your Carbon Emmission Estimate</h2>
      
       <form onSubmit={handleSubmit} className="form">
         <div className="data">
-        Type: <input value={type}
+        Type (Input: type as shipping): <input value={type}
          onChange={(e) => setType(e.target.value)} 
          type="types"
           name="estimatetype" 
