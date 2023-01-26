@@ -14,17 +14,19 @@ function Navigation() {
         </button>
         
           <ul className="navbar-nav justify-content-start">
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/electricity">Electricity</NavLink>
-            </li>
+
             <li className="nav-item">
               <NavLink className="nav-link" to="/flight">Flight</NavLink>
+            </li>
+
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/shipping">Shipping</NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/fuel">Fuel</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/shipping">Shipping</NavLink>
+              <NavLink className="nav-link" to="/electricity">Electricity</NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/Vehicles/vehicles">Vehicle</NavLink>
