@@ -39,7 +39,21 @@ npm start
 
 - If you wish to contribute to the project, please follow the steps below:
 1. Fork the repository
-Create a new branch with a descriptive name
-Make your changes and commit them
-Submit a pull request
+2. Create a new branch with a descriptive name
+3. Make your changes and commit them
+4. Submit a pull request
 
+## Authors
+
+1)  [stephen-nene](https://github.com/stephen-nene)
+2)  [rose-kiragu]()
+3)  [marvin-mathai]()
+4)  [richard.ngeti]()
+
+## Acknowledgments
+1. [Carbon Interface](https://docs.carboninterface.com/#/?id=introduction) for providing the API used in this project
+2. [OpenAI](https://openai.com/) for providing the language model used in this project
+
+## License
+
+This project is licensed under the MIT License 
