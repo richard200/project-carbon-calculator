@@ -30,8 +30,8 @@ export default function InfoData({modelId,vehicleMakeId,distanceUnit,distanceVal
         .then(res => res.json())
         .then(data => {
           setfetchedData(data)
-        console.log(fetchedData.data.attributes.vehicle_make);
-        console.log("unit = ",distanceUnit)
+        // console.log(fetchedData.data.attributes.vehicle_make);
+        // console.log("unit = ",distanceUnit)
         // console.log(data.data.attributes)
         setIsFetching(false)
         })
@@ -56,7 +56,7 @@ export default function InfoData({modelId,vehicleMakeId,distanceUnit,distanceVal
             </div><br/>
       <table className="table">
         <thead className="thead">
-          <tr class="highlight-row">
+          <tr className="highlight-row">
             <th className="th">Vehicle Make</th>
             <th className="th">Vehicle Model</th>
             <th className="th">Vehicle Year</th>
