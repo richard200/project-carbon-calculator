@@ -5,6 +5,7 @@
     border: none;
     border-radius: 5px;
     font-size: 16px;
+    cursor: pointer;
     }
 #submit:hover {
         background-color: blue;
@@ -20,3 +21,54 @@
 body {
     background-color: #EFE6B3;
 }
+#h1-vehicles{
+    display: flex;
+    background-color: antiquewhite;
+    justify-content: center;
+    align-items: center;
+    font-size: 70px;
+    border: 10px solid #e90000;
+}
+
+#h1-vehicles:hover {
+    background-color: #255e20;
+    border: 10px solid #00f128;
+    color: white;
+    cursor: pointer;
+  }
+  .left-img {
+    background-position: left;
+    background-size: auto;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -4;
+  }
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .th {
+      padding: 8px;
+      background-color: #b82525;
+      text-align: left;
+      border: 5px solid #ddd;
+  }
+  
+  .td {
+    padding: 8px;
+    background-color: #eecd13;
+    text-align: left;
+    font-size: 20px;
+    font-family: Arial;
+    border: 5px solid #ddd;
+  }
+  
+  .highlight-row {
+    background-color: #1a6d1e;
+  }
+  
+  
+  

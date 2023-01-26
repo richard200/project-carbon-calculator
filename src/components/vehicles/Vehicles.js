@@ -2,6 +2,8 @@ import React, {useEffect, useState} from "react";
 import InfoData from './InfoData';
 import Navigation from "../Navigation"
 import "./style.css"
+import carbonCalc from './carbon-calc.png';
+import GreenEarth from './green.png';
 
 export default function Vehicles() {
     const [vehicleMakes,setVehicleMake] = useState([])
@@ -63,6 +65,13 @@ export default function Vehicles() {
   return (
     <div>
         <Navigation/>
+        <div className="image-container">
+            <img  id="logo" src={carbonCalc} alt="carbon calc" />
+        </div>
+ <div className="left-img" style={{ backgroundImage: `url(${GreenEarth})` }}>
+   {/* other elements go here */}
+</div>
+        <h1 id="h1-vehicles">Vehicles Carbon Estimator</h1>
 
     <div className="container">
         <form >

@@ -53,28 +53,28 @@ export default function InfoData({modelId,vehicleMakeId,distanceUnit,distanceVal
     <div className="container">
        <div className="button-container" id="submit-container">
               <button className="submit-btn" id="submit" onClick={handleSubmit}>Submit Data</button>
-            </div>
+            </div><br/>
       <table className="table">
-        <thead>
-          <tr>
-            <th>Vehicle Make</th>
-            <th>Vehicle Model</th>
-            <th>Vehicle Year</th>
-            <th>Distance Value</th>
-            <th>Distance Unit</th>
-            <th>Carbon in g</th>
-            <th>Carbon in kg</th>
+        <thead className="thead">
+          <tr class="highlight-row">
+            <th className="th">Vehicle Make</th>
+            <th className="th">Vehicle Model</th>
+            <th className="th">Vehicle Year</th>
+            <th className="th">Distance Value</th>
+            <th className="th">Distance Unit</th>
+            <th className="th">Carbon in g</th>
+            <th className="th">Carbon in kg</th>
           </tr>
         </thead>
         <tbody>
-            <tr >
-              <td>{fetchedData && fetchedData.data.attributes.vehicle_make}</td>
-              <td>{fetchedData && fetchedData.data.attributes.vehicle_model}</td>
-              <td>{fetchedData && fetchedData.data.attributes.vehicle_year}</td>
-              <td>{fetchedData && fetchedData.data.attributes.distance_value}</td>
-              <td>{fetchedData && fetchedData.data.attributes.distance_unit}</td>
-              <td>{fetchedData && fetchedData.data.attributes.carbon_g}</td>
-              <td>{fetchedData && fetchedData.data.attributes.carbon_kg}</td>
+            <tr className="td">
+              <td className="td">{fetchedData && fetchedData.data.attributes.vehicle_make}</td>
+              <td className="td">{fetchedData && fetchedData.data.attributes.vehicle_model}</td>
+              <td className="td">{fetchedData && fetchedData.data.attributes.vehicle_year}</td>
+              <td className="td">{fetchedData && fetchedData.data.attributes.distance_value}</td>
+              <td className="td">{fetchedData && fetchedData.data.attributes.distance_unit}</td>
+              <td className="td">{fetchedData && fetchedData.data.attributes.carbon_g}</td>
+              <td className="td">{fetchedData && fetchedData.data.attributes.carbon_kg}</td>
             </tr>
         </tbody>
       </table>
