@@ -32,7 +32,11 @@ git clone https://github.com/richard200/project-carbon-calculator
 ``` bash
 npm install
 ```
+3. install router dom
 
+```bash
+npm install react-router-dom
+```
 3. Start the development server
 
 ``` bash
