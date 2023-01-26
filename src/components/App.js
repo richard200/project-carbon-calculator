@@ -1,10 +1,10 @@
-import './App.css';
-import Fuel from './Fuel';
+import "./App.css";
+import Fuel from "./fuel/Fuel";
 
 function App() {
   return (
     <div className="App">
-      <Fuel/>
+      <Fuel />
     </div>
   );
 }
