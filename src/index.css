@@ -127,3 +127,35 @@ text-align: center;
   vertical-align: middle;
 }
 
+#Apiform{
+  margin: 0 auto;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  margin-left: 70px;
+  margin-top: 150px;
+  border: none;
+}
+
+#ApiInput1{
+  border: none;
+  
+
+}
+
+#ApiInput2{
+  border: none;
+}
+
+#ApiInput3{
+  border: none;
+}
+
+#ApiInput4{
+  border: none;
+}
+
+#Apibtn{
+  border: none;
+
+}

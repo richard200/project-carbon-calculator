@@ -15,6 +15,7 @@ function Home() {
       <p id="intro"> Every industry impacts on the environment. <br></br>
         Use Carbon Calculator to calculate your carbon footprint<br></br>
          and go on the road to net-zero emissions.</p>
+         
     </div>
     <img id="img2" src="https://53525363.000webhostapp.com/Images/green_earth_vector_ai_concepts_for_Free_Download___Free_Vector-removebg-preview.png" alt="Carbon Calculator" />
 
