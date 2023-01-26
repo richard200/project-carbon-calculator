@@ -27,14 +27,15 @@
 }    
 body {
     background-color: #EFE6B3;
+    /* border: ; */
 }
 #h1-vehicles{
-    display: flex;
-    background-color: antiquewhite;
-    justify-content: center;
-    align-items: center;
-    font-size: 70px;
-    border: 10px solid #e90000;
+  display: flex;
+  background-color: rgb(250, 211, 160);
+  justify-content: center;
+  align-items: center;
+  font-size: 70px;
+  border: 10px solid rgb(255, 255, 255);
 }
 
 #h1-vehicles:hover {
