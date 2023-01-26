@@ -84,6 +84,7 @@ export default function VehiclesEstimate() {
                 </select>
             </div><br/>
 
+            <label htmlFor="Car-make">Enter the distance of the trip travelled: </label>
             <input 
             type="text" 
             className="form-control"
@@ -94,7 +95,7 @@ export default function VehiclesEstimate() {
             <label htmlFor="Car-make">Select distance unit to use: </label>
             <select name="car-model" id="car-model" className="form-control custom-select " onChange={(e)=> setDistanceUnit(e.target.value)}>
                 <option value="null"></option>
-                <option value="ki">km</option>
+                <option value="km">km</option>
                 <option value="mi">mi</option>
             </select><br/>
            

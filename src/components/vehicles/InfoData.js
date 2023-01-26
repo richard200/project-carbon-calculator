@@ -8,7 +8,7 @@ export default function InfoData({modelId,vehicleMakeId,distanceUnit,distanceVal
   const apiKey = 'u8TPQKqcBzfO0x55sphWiw';
     const API = "https://www.carboninterface.com/api/v1/estimates";
     const [isFetching,setIsFetching] = useState(false)
-    const [fetchedData,setfetchedData] = useState()
+    const [fetchedData,setfetchedData] = useState(null)
 
     useEffect(() => {
       if(!isFetching) return;
@@ -67,13 +67,13 @@ export default function InfoData({modelId,vehicleMakeId,distanceUnit,distanceVal
         </thead>
         <tbody>
             <tr >
-              <td>{fetchedData.data.attributes.vehicle_make}</td>
-              <td>{fetchedData.data.attributes.vehicle_model}</td>
-              <td>{fetchedData.data.attributes.vehicle_year}</td>
-              <td>{fetchedData.data.attributes.distance_value}</td>
-              <td>{fetchedData.data.attributes.distance_unit}</td>
-              <td>{fetchedData.data.attributes.carbon_g}</td>
-              <td>{fetchedData.data.attributes.carbon_kg}</td>
+              <td>{fetchedData && fetchedData.data.attributes.vehicle_make}</td>
+              <td>{fetchedData && fetchedData.data.attributes.vehicle_model}</td>
+              <td>{fetchedData && fetchedData.data.attributes.vehicle_year}</td>
+              <td>{fetchedData && fetchedData.data.attributes.distance_value}</td>
+              <td>{fetchedData && fetchedData.data.attributes.distance_unit}</td>
+              <td>{fetchedData && fetchedData.data.attributes.carbon_g}</td>
+              <td>{fetchedData && fetchedData.data.attributes.carbon_kg}</td>
             </tr>
         </tbody>
       </table>
