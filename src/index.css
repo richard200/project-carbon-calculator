@@ -160,3 +160,7 @@ text-align: center;
   border: none;
 
 }
+
+#data{
+  justify-content: space-between;
+}

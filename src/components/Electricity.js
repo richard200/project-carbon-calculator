@@ -14,6 +14,8 @@ function Electricity() {
 
     function handleSubmit(event) {
         event.preventDefault();
+        
+        
         const API_URL = 'https://www.carboninterface.com/api/v1/estimates';
         const API_KEY = 'Q6iFLA4c4lwxp0gbwlKg';
 
@@ -38,9 +40,10 @@ function Electricity() {
         })
         .then(response => response.json())
         .then(data => {
-            setData(data);
-            setLoading(false);
-        })
+          setData(data);
+          setLoading(false);
+          setSubmitted(true);
+      })
         .catch(error => {
             setError(error);
             setLoading(false);
@@ -103,10 +106,26 @@ function Electricity() {
         );
     }
 
-    return (
+    function renderData(data) {
+      if (!data) {
+          return null;
+      }
+  
+      if (typeof data === "object") {
+          return Object.keys(data).map((key, index) => (
+              <div key={index}>
+                  <p>{key}: {renderData(data[key])}</p>
+              </div>
+          ));
+      }
+  
+      return data;
+  }
+  
+  return (
       <div>
-        <Navigation/>
-        {data && <div>{JSON.stringify(data).replace(/[{}"]/g, '').split(',').join(', ')}</div>}
+          <Navigation/>
+          {renderData(data)}
       </div>
   );
 }
