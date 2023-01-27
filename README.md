@@ -23,10 +23,9 @@ The following requirements must be delivered in order to consider the submission
   #### fuel estimate component
   ![fuel-page](./fuel.png)
 
-   #### Electricty estimate component
+#### Electricty estimate component
    ![Electricty-page](./stima.png)
-
-  #### Flight estimate component
+#### Flight estimate component
   ![flight-page](./fligth.png)
 
  #### Shipping estimate component
@@ -70,10 +69,18 @@ npm start
 
 ## Authors
 
+2)  [rose-kiragu](https://github.com/Rose534)
+3)  [marvin-mathai](https://github.com/MathaiMarvin)
+4)  [richard.ngeti](https://github.com/richard200)
 1)  [stephen-nene](https://github.com/stephen-nene)
-2)  [rose-kiragu]()
-3)  [marvin-mathai]()
-4)  [richard.ngeti]()
+
+<!-- (https://avatars.githubusercontent.com/u/52774316?s=120&v=4 ) -->
+
+<!-- 1.<img src="" class="custom-image-size"></img>
+2.<img src="" class="custom-image-size"></img>
+3.<img src="" class="custom-image-size"></img>
+4.<img src="" class="custom-image-size"></img> -->
+
 
 ## Acknowledgments
 1. [Carbon Interface](https://docs.carboninterface.com/#/?id=introduction) for providing the API used in this project
