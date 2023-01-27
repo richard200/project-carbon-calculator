@@ -69,10 +69,10 @@ npm start
 
 ## Authors
 
-2)  [rose-kiragu](https://github.com/Rose534)
-3)  [marvin-mathai](https://github.com/MathaiMarvin)
-4)  [richard.ngeti](https://github.com/richard200)
-1)  [stephen-nene](https://github.com/stephen-nene)
+1)  [rose-kiragu](https://github.com/Rose534)
+2)  [marvin-mathai](https://github.com/MathaiMarvin)
+3)  [richard.ngeti](https://github.com/richard200)
+4)  [stephen-nene](https://github.com/stephen-nene)
 
 <!-- (https://avatars.githubusercontent.com/u/52774316?s=120&v=4 ) -->
 
