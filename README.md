@@ -3,7 +3,7 @@
 Carbonified is a platform that focuses on climate consciousness. The platform allows users to make estimates of carbon emissions based on a specific situation, device or automobile machine. The estimates are calculated using the API provided by [Carbon Interface](https://docs.carboninterface.com/#/?id=introduction)
 <!-- <video width="320" height="240" controls> -->
   <source src="./homepage.webm" type="video/webm">
-    <img src="./homepage.png" alt="Your browser does not support the video tag.">
+    <img src="./home.png" alt="Your browser does not support the video tag.">
 </video>
 
 
@@ -17,8 +17,20 @@ The following requirements must be delivered in order to consider the submission
 - User Interface: Users should be able to interact with cool CSS animations on the User interface.
 - Data Visualization: Estimates should be stored in a table for later analysis. A graph should be provided to view the trend of estimates e.g electricity.
 
-#### vehicles estimate component
-![home-page](./vehicles-comp.png)
+  #### vehicles estimate component
+![home-page](./vehicle.png)
+
+  #### fuel estimate component
+  ![fuel-page](./fuel.png)
+
+   #### Electricty estimate component
+   ![Electricty-page](./stima.png)
+
+  #### Flight estimate component
+  ![flight-page](./fligth.png)
+
+ #### Shipping estimate component
+![shipping-page](./shipping.png)
 
 ## Installation
 1. Clone the repository
