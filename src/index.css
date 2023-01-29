@@ -1,4 +1,4 @@
- @import url('https://fonts.googleapis.com/css2?family=Domine&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Domine&display=swap');
 
 
 body{
@@ -9,9 +9,9 @@ body{
    color: #EFE6B3; 
   height: 80px;
 }
-#navBar{
+/* #navBar{
   margin-left: 520px;
-}
+} */
 
 .label {
   font-weight: bold;
@@ -64,7 +64,7 @@ body{
 }
 
 #img2{
-  margin-left: 1000px;
+  margin-left: 800px;
   margin-top: -280px;
 }
 
@@ -113,7 +113,7 @@ body{
   
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFFFFF", endColorstr="#DEFFD8", GradientType=1 );
 
-padding-bottom: 150px;
+padding-bottom: 100px;
 
 text-align: center;
 }
@@ -140,9 +140,10 @@ text-align: center;
  
  margin: 0 auto;
  text-align: center;
- width: 50%;
+ width: 90%;
  margin-top: 100px;
  outline: none;
+ padding-bottom: 10px;
 
  
 }
@@ -200,4 +201,10 @@ text-align: center;
 #headerDisplay{
   margin-top: -160px;
   font-size: 40px;
+}
+
+#fetched2{
+  text-align: center;
+  font-weight: bold;
+  padding-bottom: 10px;
 }

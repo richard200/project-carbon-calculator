@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Navigation from './Navigation';
 import carbonCalc from './vehicles/carbon-calc.png';
-import GreenEarth from './vehicles/green.png';
+import GreenEarth from './vehicles/green.png'
+
 
 function Electricity() {
     const [data, setData] = useState(null);
@@ -12,6 +13,7 @@ function Electricity() {
     const [country, setCountry] = useState("us");
     const [state, setState] = useState("fl");
     const [submitted, setSubmitted] = useState(false);
+
     
 
     function handleSubmit(event) {
@@ -20,7 +22,7 @@ function Electricity() {
         
         
         const API_URL = 'https://www.carboninterface.com/api/v1/estimates';
-        const API_KEY = 'Q6iFLA4c4lwxp0gbwlKg';
+        const API_KEY = '30DGcyM5byFlV19E8MRww';
 
         const headers = {
             'Authorization': `Bearer ${API_KEY}`,
@@ -32,7 +34,7 @@ function Electricity() {
             "electricity_unit": electricityUnit,
             "electricity_value": electricityValue,
             "country": country,
-            "state": state
+            "state": state,
         };
 
         setLoading(true);
@@ -66,11 +68,12 @@ function Electricity() {
             <img  id="logo" src={carbonCalc} alt="carbon calc" />
         </div>
           <div className="left-img" style={{ backgroundImage: `url(${GreenEarth})` }}>
-            {/* other elements go here */}
+            {}
           </div>
          
               <div>
                 <h1 id="electricValue"> Carbon Emission Estimates</h1>
+               
               </div>
               <form id="Apiform" onSubmit={handleSubmit}>
                 <label id="ApiInput1" >
@@ -126,16 +129,21 @@ function Electricity() {
       if (!data) {
           return null;
       }
-    
+
+      
+  
       if (typeof data === "object") {
-          return Object.keys(data).map((key, index) => (
-              <div id="fetched" key={index}>
-                  <p id="fetched2"> {key}: {renderData(data[key])}</p>
-              </div>
-          ));
+          return Object.keys(data)
+          .filter(key => key !== "id" && key !== "type" && key !== "estimated_at" && key !== "electricity_unit" && key !== "state" && key !== "country")
+              .map((key, index) => (
+                  <div id="fetched" key={index}>
+                      <p id="fetched2"> {key}: {renderData(data[key])}</p>
+                  </div>
+              ));
       }
       return data;
-    }
+  
+  }
     
     return (
       <div>
@@ -144,7 +152,7 @@ function Electricity() {
             <img  id="logo" src={carbonCalc} alt="carbon calc" />
         </div>
         <div className="left-img" style={{ backgroundImage: `url(${GreenEarth})` }}>
-          {/* other elements go here */}
+          {}
         </div>
          
         <div>
@@ -196,6 +204,5 @@ function Electricity() {
       </div>
     );
 }
-
+ 
 export default Electricity;
-
